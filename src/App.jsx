@@ -2,6 +2,9 @@ import "./App.css";
 import AlertButton from "./button/AlertButton";
 import MyButton from "./button/MyButton";
 import Toolbar from "./button/Toolbar";
+import Counter from "./form/Counter";
+import SayHelloForm from "./form/SayHelloForm";
+import SearchForm from "./form/SearchForm";
 import { Container } from "./hello-world/Container";
 import HelloWorld from "./hello-world/HelloWorld";
 import ParagraphWelcome from "./hello-world/ParagraphWelcome";
@@ -24,7 +27,16 @@ function App() {
         <Table />
         <AlertButton text="Tekan aku" message="Tombol di klik" />
         <MyButton text="Tekan aku juga" onSmash={() => alert("alert me kak")} />
-        <Toolbar />
+        <Toolbar
+          onClick={(e) => {
+            e.stopPropagation();
+            alert("You click toolbar");
+          }}
+        />
+
+        <SearchForm />
+        <SayHelloForm />
+        <Counter />
       </Container>
     </>
   );

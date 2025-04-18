@@ -7,7 +7,8 @@ export default defineConfig({
   build:{
     rollupOptions:{
       index: 'index.html',
-      contact: 'contact.html'
+      contact: 'contact.html',
+      task: 'task.html',
     }
   }
 })

@@ -1,18 +1,37 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { NotesDispatchContext } from "./NoteContext";
 
-export default function Note({ note, onChange, onDelete }) {
+export default function Note({ note }) {
+  const dispatch = useContext(NotesDispatchContext);
   const [isEditing, setIsEditing] = useState(false);
   let component;
 
-  function handleChangeText(e) {
-    const newNote = { ...note, text: e.target.value };
-    onChange(newNote);
+  function handleChangeNote(e) {
+    dispatch({
+      ...note,
+      type: "CHANGE_NOTE",
+      text: e.target.value,
+    });
+  }
+  function handleChangeDone(e) {
+    dispatch({
+      ...note,
+      type: "CHANGE_NOTE",
+      done: e.target.checked,
+    });
+  }
+
+  function handleDeleteNote(e) {
+    dispatch({
+      type: "DELETE_NOTE",
+      id: note.id,
+    });
   }
 
   if (isEditing) {
     component = (
       <>
-        <input type="text" value={note.text} onChange={handleChangeText} />
+        <input type="text" value={note.text} onChange={handleChangeNote} />
         <button onClick={() => setIsEditing(false)}>Simpan</button>
       </>
     );
@@ -25,11 +44,6 @@ export default function Note({ note, onChange, onDelete }) {
     );
   }
 
-  function handleChangeDone(e) {
-    const newNote = { ...note, done: e.target.checked };
-    onChange(newNote);
-  }
-
   return (
     <>
       <label htmlFor="">
@@ -39,7 +53,7 @@ export default function Note({ note, onChange, onDelete }) {
           onChange={handleChangeDone}
         />
         {component}
-        <button onClick={() => onDelete(note)}>Hapus</button>
+        <button onClick={handleDeleteNote}>Hapus</button>
       </label>
     </>
   );

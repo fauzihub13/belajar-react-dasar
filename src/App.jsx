@@ -13,7 +13,7 @@ import TodoList from "./todolist/TodoList";
 
 function App() {
   const props = {
-    greetings: "Fatih mau najla",
+    greetings: "Andi Ananda",
     name: "Rayhan iri",
     age: 17,
   };

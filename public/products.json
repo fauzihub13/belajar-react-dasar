@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Product Alpha",
+    "price": 49.99
+  },
+  {
+    "id": 2,
+    "name": "Item Beta",
+    "price": 125.5
+  },
+  {
+    "id": 3,
+    "name": "Widget Gamma",
+    "price": 19.75
+  },
+  {
+    "id": 4,
+    "name": "Thing Delta",
+    "price": 75.0
+  },
+  {
+    "id": 5,
+    "name": "Object Epsilon",
+    "price": 99.99
+  },
+  {
+    "id": 6,
+    "name": "Component Zeta",
+    "price": 35.2
+  },
+  {
+    "id": 7,
+    "name": "Module Eta",
+    "price": 150.0
+  },
+  {
+    "id": 8,
+    "name": "Element Theta",
+    "price": 59.95
+  },
+  {
+    "id": 9,
+    "name": "Structure Iota",
+    "price": 29.5
+  },
+  {
+    "id": 10,
+    "name": "Unit Kappa",
+    "price": 110.25
+  }
+]
